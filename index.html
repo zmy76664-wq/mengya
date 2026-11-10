@@ -1,0 +1,1276 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>先诺欣 · 联合用药速查 V0.9</title><meta name="description" content="先诺欣合并用药资料检索与文献分级研究演示"><style>
+:root{--bg:#f2f7f6;--paper:#fff;--ink:#122e32;--sub:#577179;--green:#096657;--bdr:#d6e5e2;--shadow:0 12px 42px rgba(15,56,56,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft Yahei",sans-serif;margin:0;line-height:1.58}a{color:#076c60}header{background:linear-gradient(116deg,#053a40,#0b7668);color:white;padding:32px 22px 76px}header .wrap{max-width:980px;margin:auto}header h1{font-size:clamp(26px,4vw,39px);margin:2px 0 10px;line-height:1.35}header p{margin:0;color:#ddf6f1;max-width:730px;font-size:15px}.overline{letter-spacing:.15em;font-size:12px;color:#94e0d5;font-weight:700;margin-bottom:12px}.shell{max-width:980px;margin:-48px auto 50px;padding:0 18px}.search-card{background:white;padding:24px;border-radius:20px;box-shadow:var(--shadow);border:1px solid #e0eeeb}.search-card label{display:block;font-weight:800;font-size:18px;margin-bottom:10px}.search-row{display:flex;gap:9px}.search-row input{min-width:0;flex:1;width:100%;border:2px solid #bed8d3;border-radius:11px;padding:15px;font-size:17px;color:var(--ink);background:white;outline:none}.search-row input:focus{border-color:#008f7c}.search-row input:disabled{background:#f4f5f5;color:#8a999c}.search-row button{border:0;border-radius:11px;background:#097763;color:white;font-weight:750;font-size:17px;min-width:98px;cursor:pointer}.search-row button:disabled{background:#a9bdbb;cursor:not-allowed}.indicator{background:#fff4e6;border:1px solid #f2d7ad;border-radius:9px;padding:10px 12px;margin-top:13px;font-size:13px;color:#82511d}.indicator.ok{color:#12604a;background:#e9f9f3;border-color:#b9e8d5}.tiny{font-size:12px;color:#708789;margin-top:8px}.quick{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:17px}.quick span{font-size:13px;color:var(--sub);font-weight:700}.quick a{display:inline-flex;padding:7px 11px;border:1px solid #cbded9;color:#0b695d;text-decoration:none;background:#f1f8f6;border-radius:999px;font-size:13px;font-weight:700}.quick a:hover{background:#d5f4e9}.intro{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:27px 2px 14px}.intro h2{font-size:20px;margin:0}.intro p{font-size:13px;color:var(--sub);margin:0}.drug{border-radius:14px;background:white;border:1px solid var(--bdr);margin-bottom:11px;box-shadow:0 3px 14px rgba(16,64,59,.03);scroll-margin-top:14px;overflow:hidden}.drug[hidden]{display:none}.drug summary{display:flex;align-items:center;gap:12px;cursor:pointer;list-style:none;padding:17px 17px;min-height:65px;user-select:none}.drug summary::-webkit-details-marker{display:none}.pill{order:2;margin-left:auto;display:inline-flex;align-items:center;justify-content:center;font-size:12px;border-radius:100px;padding:5px 9px;font-weight:750;white-space:nowrap}.pill.prohibited{background:#fee6e6;color:#a5212f}.pill.conditional,.pill.avoid{background:#ffefdb;color:#915313}.pill.tdm{background:#fff2d2;color:#916209}.pill.manage{background:#e5efff;color:#265fa0}.pill.unknown,.pill.lower{background:#edf1f2;color:#586d72}.drug-name{font-weight:800;font-size:17px}.drug-cat{font-size:12px;color:var(--sub)}.chevron{order:3;font-size:20px;color:#7e9292;margin-left:3px}.drug[open] .chevron{transform:rotate(180deg)}.drug-body{border-top:1px solid #edf1f0;padding:18px}.status{font-size:12px;color:#6c7d7b;background:#f5f8f7;border-radius:6px;padding:7px 10px;margin-bottom:13px}.info{margin:0 0 12px}.info b,.phase b{color:#133e40;font-size:14px}.info p,.phase p{margin:2px 0 0;font-size:14px;color:#354d50;white-space:pre-line}.stages{margin-top:18px;border-top:1px solid #e0eae8;padding-top:6px}.stages h3{font-size:15px;margin-bottom:12px}.phase{background:#f2f8f7;border-left:3px solid #52a89a;padding:12px;margin:10px 0;border-radius:0 8px 8px 0}.caution{background:#fff7e9;color:#775112;padding:10px 12px;border-radius:7px;font-size:13px;margin-top:12px}.sources{border-top:1px solid #e8eeee;padding-top:13px;margin-top:14px}.sources>b{font-size:13px}.sources a{font-size:13px;display:block;margin-top:8px;overflow-wrap:anywhere}.advanced{display:inline-flex;font-size:13px;text-decoration:none;background:#e9f3f1;padding:10px 12px;border-radius:9px;font-weight:700;margin-top:14px}.notice{background:#fff8e7;border:1px solid #ebdcb9;padding:14px 16px;border-radius:12px;color:#735523;font-size:13px;margin:24px 0}.empty{display:none;background:#fff;color:#714c29;border:1px dashed #e7b984;border-radius:10px;padding:16px;margin-top:12px}footer{font-size:12px;color:#71878a;text-align:center;padding:25px}.nojs-hint{font-size:12px;color:#997338;margin-top:8px}.preview-only{padding:14px;background:#eef6fb;border-radius:10px;color:#315a6f;font-size:13px;margin-top:15px}
+@media(max-width:700px){header{padding:24px 16px 75px}.shell{padding:0 12px}.search-card{padding:16px;border-radius:15px}.search-row button{min-width:80px;font-size:15px}.search-row input{font-size:16px;padding:13px 11px}.drug summary{gap:7px;padding:13px 11px;flex-wrap:wrap}.drug-name{font-size:16px}.drug-cat{font-size:11px}.pill{font-size:11px;padding:5px 7px}.chevron{font-size:15px}.intro{align-items:start;flex-direction:column;gap:4px}.drug-body{padding:13px}}
+
+.module{background:white;border:1px solid #cbded9;border-radius:20px;padding:24px;margin:24px 0}.module h2{font-size:25px;margin:6px 0}.module p{color:#486369}.module .eyebrow{font-size:12px;color:#147263;letter-spacing:.12em}.modnotice{padding:14px;border-left:4px solid #c58728;background:#fff6e7;margin:16px 0;color:#664415}.formgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.field{display:flex;flex-direction:column;font-size:13px;gap:6px;color:#264b4b}fieldset{border:0;border-top:1px solid #dce9e5;padding:18px 0;margin:12px 0}legend{font-size:16px;font-weight:700;padding-right:12px}.field input,.field select,.field textarea{box-sizing:border-box;width:100%;min-height:42px;border:1px solid #b9ceca;border-radius:7px;padding:9px;background:#fff;color:#193e3a;font:inherit}.field:focus-within{color:#087866}.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid #4f9d8d}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:16px 0}.toolbar button{cursor:pointer;border:1px solid #a7c8be;border-radius:8px;padding:11px 16px;background:#ecf5f1;color:#175445;font-weight:700}.toolbar .primary{background:#086d5b;color:#fff}.report{margin-top:20px;border-top:2px solid #126c5a;padding-top:18px}.report[hidden]{display:none}.report h3{font-size:21px}.report h4{margin:0 0 6px}.report p{margin:5px 0}.report li{margin:5px 0}.report .alert{padding:13px;background:#fff0ed;color:#922f24;border-radius:8px;margin:8px 0}.report .block{padding:16px;background:#f3f8f6;border-radius:9px;margin:12px 0}.report .refs a{font-size:12px;margin-right:12px;display:inline-block}.report .lock{color:#8e4f0e;font-weight:700}.stale{padding:10px;color:#81521b}#evidence{font-size:13px}#evidence li{margin:12px 0} @media(max-width:700px){.formgrid{grid-template-columns:1fr}.module{padding:16px}.module h2{font-size:22px}}@media print{header,.search-card,.intro,#cards,.preview-only,.quick,footer,.module form,.toolbar,.notice{display:none!important}.shell{margin:0;max-width:none}.module{border:0;padding:0}.report .block{break-inside:avoid}body{background:#fff}}
+
+.plan{padding:18px;background:#ecf5f1;border:1px solid #8cbdad;border-radius:10px;margin:12px 0}.dose-box{padding:18px;border:2px solid #b77e2b;border-radius:10px;background:#fff8ed;margin:15px 0}.dose-box h4{font-size:21px;color:#69430f}.dose-box p{color:#604e32}.dose-box,.plan{break-inside:avoid}
+</style></head>
+<body><header><div class="wrap"><div class="overline">CLINICAL PHARMACY · RESEARCH PROTOTYPE V0.9</div><h1>先诺欣® 联合用药速查</h1><p>先找到药物，再查看风险、处理阶段和依据。现阶段为未经临床审核的研究演示，不提供可直接执行的处方。</p></div></header>
+<main class="shell"><section class="search-card"><label for="searchInput">搜索正在服用的药物</label>
+<div class="search-row"><input id="searchInput" type="search" autocomplete="off" enterkeyhint="search" placeholder="文件预览中可能无法运行搜索，请点下方药名" disabled><button type="button" id="searchButton" disabled>搜索</button></div>
+<div id="runtimeStatus" class="indicator" role="status">⚠ 当前为静态预览 / 搜索脚本未启动。这个环境下输入搜索不会工作，请直接点击下方药物入口；要用输入搜索，请将网站发布为网页或在允许 JavaScript 的浏览器中打开。</div>
+<div class="quick"><span>一键查询：</span><a href="#med-tacrolimus" data-feature="tacrolimus">他克莫司</a><a href="#med-cyclosporine" data-feature="cyclosporine">环孢素</a><a href="#med-amlodipine" data-feature="amlodipine">氨氯地平</a><a href="#med-clarithromycin" data-feature="clarithromycin">克拉霉素</a><a href="#med-rivaroxaban" data-feature="rivaroxaban">利伐沙班</a><a href="#med-amiodarone" data-feature="amiodarone">胺碘酮</a><a href="#med-sildenafil_pah" data-feature="sildenafil_pah">西地那非（肺动脉高压）</a><a href="#med-voriconazole" data-feature="voriconazole">伏立康唑</a></div>
+<div class="tiny">输入中文名、英文名或别名均可。所有检索在浏览器本地进行，不上传患者资料。</div></section>
+<section class="module" id="tac-module"><div class="eyebrow">V0.9 · TACROLIMUS / 个体化辅助决策</div><h2>把风险、监测与复药条件说清楚</h2><p>先诺欣＝先诺特韦 / 利托那韦。填写资料后生成供移植专科与临床药师审核的初步策略。</p><div class="modnotice"><strong>研究 / 待审核 · 不可直接开具处方</strong><br>不根据单次浓度自动推算剂量；通过条件时可显示mg总日量讨论范围，需专科另行处方。全部资料只在本机内存处理，刷新即清除。所有时间按本机时区输入。</div><noscript>JavaScript未启动：无法评估。请用Mac Safari或Chrome打开本文件；下方药物卡片仍可阅读。</noscript><div class="toolbar"><button type="button" id="demo">填入虚构演示病例</button><button type="button" id="clearForm">清空患者资料</button><a href="#searchInput">返回药物搜索</a></div><div id="caseState" role="status"></div><form id="tacForm" novalidate><fieldset><legend>01 / 患者与免疫抑制背景</legend><div class="formgrid"><label class="field">性别<select id="sex" name="sex"><option value="">请选择</option><option value="女">女</option><option value="男">男</option><option value="其他">其他</option></select></label><label class="field">年龄（岁）<input id="age" name="age" type="number" step="any"></label><label class="field">妊娠状态<select id="pregnancy" name="pregnancy"><option value="">请选择</option><option value="no">否/不适用</option><option value="yes">是</option><option value="unknown">未明确</option></select></label><label class="field">适应证 / 移植类型<select id="indication" name="indication"><option value="">请选择</option><option value="kidney">肾移植</option><option value="liver">肝移植</option><option value="heart">心移植</option><option value="lung">肺移植</option><option value="multi">多器官移植</option><option value="other">其他适应证</option></select></label><label class="field">移植日期/术后阶段、原发病与近期排斥情况<input id="transplant" name="transplant" type="text"></label><label class="field">专科评定排斥/复发风险<select id="immune" name="immune"><option value="">请选择</option><option value="low">已评定低风险</option><option value="high">高风险</option><option value="unknown">未评定</option></select></label></div></fieldset><fieldset><legend>02 / 制剂与原给药方案</legend><div class="formgrid"><label class="field">他克莫司制剂<select id="form" name="form"><option value="">请选择</option><option value="ir">速释</option><option value="er">缓释</option><option value="other">其他/非口服</option></select></label><label class="field">商品名及规格（如每粒含量）<input id="brand" name="brand" type="text"></label><label class="field">抗病毒前稳定方案：每次剂量（mg，各次须等量）<input id="dose" name="dose" type="number" step="any"></label><label class="field">每日给药次数<select id="freq" name="freq"><option value="">请选择</option><option value="1">每日1次</option><option value="2">每日2次</option><option value="3">每日3次</option><option value="4">每日4次</option></select></label><label class="field">实际给药方案、近期变更/漏服/加服/腹泻（无请填无）<input id="adherence" name="adherence" type="text"></label><label class="field">他克莫司末次实际给药<input id="last" name="last" type="datetime-local"></label></div></fieldset><fieldset><legend>03 / 治疗时间轴</legend><div class="formgrid"><label class="field">本次评估时间<input id="now" name="now" type="datetime-local"></label><label class="field">先诺欣阶段<select id="stage" name="stage"><option value="">请选择</option><option value="planned">计划使用、尚未开始</option><option value="active">正在使用</option><option value="ended">已结束</option></select></label><label class="field">先诺欣首次给药（未开始时填计划）<input id="start" name="start" type="datetime-local"></label><label class="field">先诺欣末次给药 / 计划结束<input id="end" name="end" type="datetime-local"></label><label class="field">结束时间性质<select id="endKind" name="endKind"><option value="">请选择</option><option value="planned">计划时间</option><option value="actual">已确认实际末次给药</option></select></label></div></fieldset><fieldset><legend>04 / TDM与个体目标</legend><div class="formgrid"><label class="field">专科目标谷浓度下限（ng/mL）<input id="low" name="low" type="number" step="any"></label><label class="field">专科目标谷浓度上限（ng/mL）<input id="high" name="high" type="number" step="any"></label><label class="field">目标范围的专科制定依据（不自动设默认值）<input id="targetBy" name="targetBy" type="text"></label><label class="field">本次全血浓度（ng/mL＝μg/L）<input id="level" name="level" type="number" step="any"></label><label class="field">本次采血时间<input id="sample" name="sample" type="datetime-local"></label><label class="field">采样类型<select id="sampling" name="sampling"><option value="">请选择</option><option value="trough">下一剂前谷浓度</option><option value="held">暂停给药后的监测浓度</option><option value="random">随机浓度</option><option value="unknown">不清楚</option></select></label><label class="field">核对给药、采血及检验报告后记录可靠<select id="reliable" name="reliable"><option value="">请选择</option><option value="yes">是</option><option value="no">否</option><option value="unknown">未确认</option></select></label><label class="field">最近一次既往全血浓度（ng/mL）<input id="prior" name="prior" type="number" step="any"></label><label class="field">既往采血时间<input id="priorTime" name="priorTime" type="datetime-local"></label><label class="field">前后采样/方法/剂量变化经专科评估可比较<select id="trendValid" name="trendValid"><option value="">请选择</option><option value="yes">是</option><option value="no">否</option><option value="unknown">未确认</option></select></label><label class="field">更早浓度与采血时间、检验方法或趋势说明（可选）<textarea id="trendNote" name="trendNote" rows="3"></textarea></label><label class="field">能否及时连续TDM并收到结果<select id="tdm" name="tdm"><option value="">请选择</option><option value="yes">已落实</option><option value="no">不能</option><option value="unknown">未确认</option></select></label></div></fieldset><fieldset><legend>05 / 肝肾功能与毒性</legend><div class="formgrid"><label class="field">血肌酐<input id="scr" name="scr" type="number" step="any"></label><label class="field">血肌酐单位<select id="scrUnit" name="scrUnit"><option value="">请选择</option><option value="umol">μmol/L</option><option value="mg">mg/dL</option></select></label><label class="field">检验报告eGFR（mL/min/1.73m²）<input id="egfr" name="egfr" type="number" step="any"></label><label class="field">肾功能检测时间<input id="renalTime" name="renalTime" type="datetime-local"></label><label class="field">已诊断/怀疑AKI或肾功能快速恶化<select id="aki" name="aki"><option value="">请选择</option><option value="no">否</option><option value="yes">是</option><option value="unknown">不明确</option></select></label><label class="field">正在透析（任何方式）<select id="dialysis" name="dialysis"><option value="">请选择</option><option value="no">否</option><option value="yes">是</option><option value="unknown">不明确</option></select></label><label class="field">血钾（mmol/L）<input id="potassium" name="potassium" type="number" step="any"></label><label class="field">肝功能 / Child-Pugh<select id="child" name="child"><option value="">请选择</option><option value="normal">无肝功能不全</option><option value="A">Child-Pugh A</option><option value="B">Child-Pugh B</option><option value="C">Child-Pugh C</option><option value="unknown">未评估</option></select></label><label class="field">ALT（U/L）<input id="alt" name="alt" type="number" step="any"></label><label class="field">AST（U/L）<input id="ast" name="ast" type="number" step="any"></label><label class="field">总胆红素（μmol/L）<input id="bili" name="bili" type="number" step="any"></label><label class="field">肝功能检测时间<input id="liverTime" name="liverTime" type="datetime-local"></label><label class="field">少尿、明显震颤、意识变化等疑似毒性症状<select id="symptom" name="symptom"><option value="">请选择</option><option value="no">无</option><option value="yes">有</option><option value="unknown">未评估</option></select></label></div></fieldset><fieldset><legend>06 / 合并药审查</legend><div class="formgrid"><label class="field">全部合并药、非处方药、草药/保健品及近期停药时间（无请填无）<textarea id="meds" name="meds" rows="3"></textarea></label><label class="field">完整清单已由药师复核<select id="medReview" name="medReview"><option value="">请选择</option><option value="yes">是</option><option value="no">否</option><option value="unknown">未确认</option></select></label></div></fieldset><fieldset><legend>07 / 剂量讨论显示设置</legend><div class="formgrid"><label class="field">结果显示模式<select id="doseMode" name="doseMode"><option value="reference">显示mg总日量讨论范围（条件通过后）</option><option value="risk">仅风险与监测，不换算mg</option></select></label><label class="field">原方案是否已经专科核实<select id="baselineConfirmed" name="baselineConfirmed"><option value="">请选择</option><option value="yes">已核实：抗病毒前稳定方案、每日各次等量</option><option value="no">未核实 / 早晚不等量 / 非每日方案</option></select></label></div><p>只做“原稳定总日量 × 外推比例”的算术换算。不是患者已获准服用的剂量，不自动除成单次量，不按胶囊规格取整。安全检查未通过时，此设置不能解除锁定。</p></fieldset><div class="toolbar"><button class="primary" type="submit">生成初步策略</button></div></form><p id="stale" class="stale" role="status">尚未评估。缺失资料会逐项提示。</p><section id="report" class="report" aria-live="polite" hidden></section><details id="evidence"><summary>证据分层与规则边界 · 说明书核验 2026-10-24 · Liverpool复核 2026-10-25</summary><ol id="sourceList"></ol><p>先声产品页目前链接08版说明书；PDF部分数字文本抽取乱码，数值用厂家患者版说明交叉核对。不能保证未来无更新，应核对实际包装说明书。Liverpool与SFPT均对应奈玛特韦/利托那韦，不能直接视为先诺欣方案。</p><p>结束后至少72小时的比例锁定、48小时数据时效、±2小时采样筛查、所有必填项与高风险比例锁定，是本原型的保守审核规则，不是获批临床阈值。性别、年龄及肝肾指标仅作背景/适用性/风险评估，不推算他克莫司清除率；不从单次肌酐计算eGFR。</p><p>旧版75条情景保留检索，未逐条重新临床验证；旧版通用剂量计算入口已移除，避免绕过新模块的安全门槛。</p></details></section><section class="intro"><h2>药物相互作用资料</h2><p id="resultCount">共 75 条待审核药物情景</p></section>
+<div id="empty" class="empty">没有检索到该药，<strong>不代表可以安全联用</strong>。请核对药品通用名，仍需参考最新版说明书。</div>
+<div class="preview-only">📌 <strong>打不开搜索的备用方式：</strong>即使文件预览不允许运行脚本，点上面的「他克莫司」等药名入口，也能直接跳转；下面所有药物卡片可以点开阅读。</div>
+<section id="cards"><details class="drug" id="med-tacrolimus" data-search="他克莫司 FK506 Tacrolimus 普乐可复 免疫抑制剂" open>
+<summary><span class="pill tdm">高风险 · 需TDM</span><span class="drug-name">他克莫司</span><span class="drug-cat">免疫抑制剂</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">分层研究建议·待药师审核 · 已有分层研究资料</div>
+<div class="info"><b>作用机制</b><p>利托那韦强烈抑制CYP3A，可显著增加他克莫司暴露；即使先停他克莫司，也可能因残留药物及代谢抑制出现延迟清除。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>不要按常规剂量直接联用或按固定天数自动恢复。他克莫司的停用、单次补服、再启用及剂量必须由专科医生结合谷浓度和病情决定；缺乏及时TDM条件时优先讨论其他抗病毒方案。</p></div>
+<div class="info"><b>监测</b><p>复查规范谷浓度(C0)、肌酐/eGFR、血钾、血糖及神经毒性；先诺欣疗程结束后仍需追踪。</p></div>
+<div class="stages"><h3>分阶段处理建议（研究用途，尚未审方）</h3>
+<div class="phase"><b>服用先诺欣前</b><p>核对末次给药、缓释/速释剂型、移植类型与术后时间、近3次C₀、个体化目标谷浓度、eGFR/肌酐和是否能连续TDM。利物浦对其他含利托那韦5日方案的专家流程：速释剂型距末次给药≥12小时、缓释剂型≥24小时再开始抗病毒（仅供专科参考，不是先诺欣专属批准间隔）。</p></div>
+<div class="phase"><b>先诺欣治疗期间</b><p>多数参考流程在抗病毒期间暂缓他克莫司，并密切评估排斥风险；若存在异常高浓度、少尿、手抖、血钾升高，应即时复查C₀和急诊/专科评估，不必等到疗程结束。</p></div>
+<div class="phase"><b>停用先诺欣后</b><p>利物浦其他含利托那韦5日方案：第6–7天复查谷浓度，此后每2–4天复查。谷浓度超目标时需专科评估继续暂缓；复药比例仅在上方个体化模块完成资料与安全核查后供专科讨论。不可直接按此卡片处方。</p></div>
+</div>
+<div class="caution"><b>证据局限：</b>本品说明书仅提示升高及密切监测；具体停药时序和重启算法来自奈玛特韦/利托那韦，未经本品临床验证。</div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw5.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·免疫抑制 ↗</a>
+<a href="https://www.covid19-druginteractions.org/interactions/20675" target="_blank" rel="noopener noreferrer">Liverpool：奈玛特韦/利托那韦—他克莫司（2026查询） ↗</a>
+</div>
+<div class="actions"><a href="#tac-module" class="advanced" data-clinical="true">进入他克莫司个体化辅助决策</a></div>
+</div>
+</details><details class="drug" id="med-cyclosporine" data-search="环孢素 环孢菌素 CsA Ciclosporin Cyclosporine 免疫抑制剂" >
+<summary><span class="pill tdm">高风险 · 需TDM</span><span class="drug-name">环孢素</span><span class="drug-cat">免疫抑制剂</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">分层研究建议·待药师审核 · 已有分层研究资料</div>
+<div class="info"><b>作用机制</b><p>利托那韦抑制CYP3A，可增高环孢素浓度。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>需由专科药师制定个体化方案，可考虑替代抗病毒药物；不得按统一减量比例自动给药。</p></div>
+<div class="info"><b>监测</b><p>C0或适用的TDM指标、Scr/eGFR、血压、血钾及不良反应。</p></div>
+<div class="stages"><h3>分阶段处理建议（研究用途，尚未审方）</h3>
+<div class="phase"><b>服用先诺欣前</b><p>确认环孢素剂型、原日剂量、目标C₀/C₂、末次服药时间、原发病、肝肾功能；未能获得TDM时不要自动联合。</p></div>
+<div class="phase"><b>先诺欣治疗期间</b><p>其他含利托那韦5日方案文献曾使用环孢素总日剂量减少约80%（即原日剂量的20%，可考虑每日一次）的专家管理流程；这只是间接研究方案，不是对先诺欣的默认处方。</p></div>
+<div class="phase"><b>停用先诺欣后</b><p>其他含利托那韦方案推荐疗程结束第6–7天检测浓度，此后每2–4天复查并逐步回调，至少追踪约2周；不能直接恢复原剂量。</p></div>
+</div>
+<div class="caution"><b>证据局限：</b>本品直接证据仅支持浓度可能增加及监测；80%为其他含利托那韦方案外推。</div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw5.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·免疫抑制 ↗</a>
+<a href="https://www.covid19-druginteractions.org/all_interactions/641" target="_blank" rel="noopener noreferrer">Liverpool：奈玛特韦/利托那韦—环孢素（研究外推） ↗</a>
+</div>
+<div class="actions"><a href="#med-cyclosporine" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-amlodipine" data-search="氨氯地平 Amlodipine 络活喜 心血管" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">氨氯地平</span><span class="drug-cat">心血管</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">分层研究建议·待药师审核 · 已有分层研究资料</div>
+<div class="info"><b>作用机制</b><p>利托那韦抑制CYP3A，可能显著增加氨氯地平暴露并导致低血压。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣中国厂家公布的禁忌表将氨氯地平列为禁止联用。不得将其他利托那韦方案的经验性减量建议直接取代本品说明书。</p></div>
+<div class="info"><b>监测</b><p>血压、头晕、晕厥；核对现行批次说明书。</p></div>
+<div class="stages"><h3>分阶段处理建议（研究用途，尚未审方）</h3>
+<div class="phase"><b>服用先诺欣前</b><p>评估原有降压治疗是否可由临床医生更换，或选择其他抗病毒药。</p></div>
+<div class="phase"><b>先诺欣治疗期间</b><p>禁止联合给药；在更换降压药时监测血压，防止原病控制不良。</p></div>
+<div class="phase"><b>停用先诺欣后</b><p>复用原药之前由医师根据血压与利托那韦抑酶消退情况审慎评估；暂无本品经验证的固定重启时点。</p></div>
+</div>
+<div class="caution"><b>证据局限：</b>存在产品说明书与跨产品外推冲突，以先诺欣本品说明书为准。</div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·心血管 ↗</a>
+<a href="https://www.covid19-druginteractions.org/interactions/20472" target="_blank" rel="noopener noreferrer">Liverpool：奈玛特韦/利托那韦—氨氯地平（对照用） ↗</a>
+</div>
+<div class="actions"><a href="#med-amlodipine" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-clarithromycin" data-search="克拉霉素 Clarithromycin 抗感染药" >
+<summary><span class="pill manage">需要监测/调整</span><span class="drug-name">克拉霉素</span><span class="drug-cat">抗感染药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">分层研究建议·待药师审核 · 已有分层研究资料</div>
+<div class="info"><b>作用机制</b><p>利托那韦可能影响克拉霉素及其代谢物的暴露；肾功能受损时风险进一步变化。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>厂家公开药物配伍建议：CrCl 30–60 mL/min 时考虑克拉霉素减量50%；CrCl&lt;30时考虑减量75%；合用克拉霉素最高1g/日。肾功能不稳及具体产品剂型需药师审核。</p></div>
+<div class="info"><b>监测</b><p>eGFR、肝功能、相关不良反应。</p></div>
+<div class="stages"><h3>分阶段处理建议（研究用途，尚未审方）</h3>
+<div class="phase"><b>服用先诺欣前</b><p>需要单独输入Cockcroft–Gault等方法获得的CrCl（mL/min）；不能将eGFR数值直接当作CrCl。</p></div>
+<div class="phase"><b>先诺欣治疗期间</b><p>先诺欣厂家公开配伍资料（研究来源为不同利托那韦剂量）指出：CrCl 30–60 mL/min时应考虑将克拉霉素剂量减少50%；CrCl&lt;30时考虑减少75%；合用克拉霉素不超过1 g/日。肾功能不稳定、适应证、严重感染及QT风险需独立复核；不得自动签发。</p></div>
+<div class="phase"><b>停用先诺欣后</b><p>肾功能不稳定时重新估算CrCl并结合感染控制情况决定恢复剂量。</p></div>
+</div>
+<div class="caution"><b>证据局限：</b>数值来自先诺欣中国厂家公开的利托那韦药物配伍指导，并非先诺欣标准5日用药剂量针对不同克拉霉素方案的临床验证。处方执行须经过药师审核。</div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw6.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·抗感染 ↗</a>
+<a href="https://www.covid19-druginteractions.org/all_interactions/641" target="_blank" rel="noopener noreferrer">Liverpool：奈玛特韦/利托那韦—克拉霉素 CrCl 分层 ↗</a>
+</div>
+<div class="actions"><a href="#med-clarithromycin" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-rivaroxaban" data-search="利伐沙班 Rivaroxaban 拜瑞妥 抗凝药" >
+<summary><span class="pill avoid">避免或不建议合用</span><span class="drug-name">利伐沙班</span><span class="drug-cat">抗凝药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">分层研究建议·待药师审核 · 已有分层研究资料</div>
+<div class="info"><b>作用机制</b><p>利托那韦抑制CYP3A和P-gp，可能增加利伐沙班暴露及出血风险。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣官方资料不建议合用；抗凝适应证可能非常重要，必须由医生评估替代抗病毒或抗凝方案，不得自行停药。</p></div>
+<div class="info"><b>监测</b><p>出血/血栓风险、肾功能、合用的抗血小板药物。</p></div>
+<div class="stages"><h3>分阶段处理建议（研究用途，尚未审方）</h3>
+<div class="phase"><b>服用先诺欣前</b><p>明确房颤或VTE、血栓风险、最近事件、出血风险及抗凝替代可能；多学科优先讨论其他抗病毒。</p></div>
+<div class="phase"><b>先诺欣治疗期间</b><p>如改变抗凝必须由开方医生设计不中断保护的衔接方案，不在小程序生成剂量。</p></div>
+<div class="phase"><b>停用先诺欣后</b><p>核对抗凝方案及血栓风险，恢复原抗凝药前重新确认DDI窗口。</p></div>
+</div>
+<div class="caution"><b>证据局限：</b>药代变化发生于不同利托那韦研究条件，不视为本品固定暴露倍数。</div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·心血管 ↗</a>
+<a href="https://www.jacc.org/doi/10.1016/j.jacc.2022.08.800" target="_blank" rel="noopener noreferrer">JACC 2022: 心血管药与奈玛特韦/利托那韦 ↗</a>
+</div>
+<div class="actions"><a href="#med-rivaroxaban" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-amiodarone" data-search="胺碘酮 Amiodarone 心血管" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">胺碘酮</span><span class="drug-cat">心血管</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>利托那韦可能增加胺碘酮暴露，引起严重心律失常。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>官方禁忌联用；优先评估替代抗病毒治疗，不能依靠短暂停用胺碘酮自行规避相互作用。</p></div>
+<div class="info"><b>监测</b><p>由心内科评估心律与心电图风险。</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-amiodarone" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-sildenafil_pah" data-search="西地那非（肺动脉高压） 西地那非 Sildenafil PDE5抑制剂" >
+<summary><span class="pill conditional">条件性禁忌</span><span class="drug-name">西地那非（肺动脉高压）</span><span class="drug-cat">PDE5抑制剂</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">分层研究建议·待药师审核 · 已有分层研究资料</div>
+<div class="info"><b>作用机制</b><p>暴露显著增加，可致低血压、晕厥等。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>本条存在剂型、适应证、剂量或患者状态的限制条件；按场景复核原始说明书，专科评估后处理。未经审核的程序不提供具体减量或停药方案。</p></div>
+<div class="info"><b>监测</b><p>血压、晕厥和肺动脉高压治疗需求</p></div>
+<div class="stages"><h3>分阶段处理建议（研究用途，尚未审方）</h3>
+<div class="phase"><b>服用先诺欣前</b><p>由肺动脉高压专科评估替代抗病毒及PAH治疗方案。</p></div>
+<div class="phase"><b>先诺欣治疗期间</b><p>不应合用。</p></div>
+<div class="phase"><b>停用先诺欣后</b><p>恢复既有PAH方案需专科评估。</p></div>
+</div>
+<div class="caution"><b>证据局限：</b>先诺欣说明书禁忌表直接证据。</div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw9.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·其他 ↗</a>
+</div>
+<div class="actions"><a href="#med-sildenafil_pah" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-voriconazole" data-search="伏立康唑 Voriconazole 威凡 抗感染药" >
+<summary><span class="pill avoid">避免或不建议合用</span><span class="drug-name">伏立康唑</span><span class="drug-cat">抗感染药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>利托那韦对伏立康唑的影响与剂量、给药时间有关；部分利托那韦方案可能显著降低伏立康唑暴露。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书对高剂量利托那韦合用伏立康唑设有禁忌提示；对先诺欣所用低剂量利托那韦，不能直接等同为绝对禁忌，但宜尽量避免并由感染科根据TDM与风险收益评估。</p></div>
+<div class="info"><b>监测</b><p>伏立康唑谷浓度、肝功能、感染治疗反应；复核现行两药说明书。</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw6.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·抗感染 ↗</a>
+</div>
+<div class="actions"><a href="#med-voriconazole" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-triazolam" data-search="三唑仑 精神神经" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">三唑仑</span><span class="drug-cat">精神神经</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>暴露增加可导致过度镇静和呼吸抑制。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>意识、呼吸</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-triazolam" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-propoxyphene" data-search="丙氧芬 镇痛药" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">丙氧芬</span><span class="drug-cat">镇痛药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>说明书列为合并用药禁忌，暴露改变可能增加严重不良反应。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>呼吸和心血管不良反应</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-propoxyphene" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-lercanidipine" data-search="乐卡地平 钙通道拮抗剂" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">乐卡地平</span><span class="drug-cat">钙通道拮抗剂</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>利托那韦可大幅增加血浆暴露，可能造成严重低血压。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>血压</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-lercanidipine" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-vardenafil" data-search="伐地那非 PDE5抑制剂" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">伐地那非</span><span class="drug-cat">PDE5抑制剂</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>暴露升高可出现严重低血压等不良反应。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>血压</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-vardenafil" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-everolimus" data-search="依维莫司 Everolimus 免疫抑制剂" >
+<summary><span class="pill tdm">高风险 · 需TDM</span><span class="drug-name">依维莫司</span><span class="drug-cat">免疫抑制剂</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">分层研究建议·待药师审核 · 已有分层研究资料</div>
+<div class="info"><b>作用机制</b><p>CYP3A及转运蛋白相关相互作用可能显著升高暴露。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>优先由原治疗团队评估是否改用其他抗病毒方案；任何停药/减量都需明确再启动策略。</p></div>
+<div class="info"><b>监测</b><p>血药浓度、肾功能、感染或相关毒性。</p></div>
+<div class="stages"><h3>分阶段处理建议（研究用途，尚未审方）</h3>
+<div class="phase"><b>服用先诺欣前</b><p>核对依维莫司C₀、目标浓度、剂量和移植/肿瘤适应证。</p></div>
+<div class="phase"><b>先诺欣治疗期间</b><p>先诺欣说明书预计暴露升高；不能按原剂量照常合用，必要调整需专科方案。</p></div>
+<div class="phase"><b>停用先诺欣后</b><p>连续TDM直至恢复稳定，CYP3A抑制在停抗病毒后不会立即消失。</p></div>
+</div>
+<div class="caution"><b>证据局限：</b>本品说明书直接提示浓度增加，未提供通用固定调药剂量。</div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw5.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·免疫抑制 ↗</a>
+</div>
+<div class="actions"><a href="#med-everolimus" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-dronedarone" data-search="决奈达隆 抗心律失常药" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">决奈达隆</span><span class="drug-cat">抗心律失常药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>利托那韦抑制药物清除，可能诱发严重心律失常。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>心律、心电图</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-dronedarone" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-rifabutin" data-search="利福布汀 Rifabutin 抗感染药" >
+<summary><span class="pill conditional">条件性禁忌</span><span class="drug-name">利福布汀</span><span class="drug-cat">抗感染药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>可能显著增加利福布汀及代谢物暴露；厂家的禁忌描述涉及较高剂量利托那韦方案。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>本条存在剂型、适应证、剂量或患者状态的限制条件；按场景复核原始说明书，专科评估后处理。未经审核的程序不提供具体减量或停药方案。</p></div>
+<div class="info"><b>监测</b><p>视力异常/葡萄膜炎、血常规、肝功能</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw6.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·抗感染 ↗</a>
+</div>
+<div class="actions"><a href="#med-rifabutin" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-rifampicin" data-search="利福平 Rifampin Rifampicin 抗感染药" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">利福平</span><span class="drug-cat">抗感染药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>强效诱导CYP3A，降低先诺欣有效成分暴露，可能导致抗病毒疗效下降。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>官方禁忌联用；近期刚停用利福平也不应自行立即开始先诺欣。</p></div>
+<div class="info"><b>监测</b><p>核查过去数周的用药史，由感染专科评估替代方案。</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-rifampicin" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-pimozide" data-search="匹莫齐特 精神神经" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">匹莫齐特</span><span class="drug-cat">精神神经</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>暴露增加可能导致心律失常等严重不良反应。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>心电图</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-pimozide" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-warfarin" data-search="华法林 Warfarin 抗凝药" >
+<summary><span class="pill manage">需要监测/调整</span><span class="drug-name">华法林</span><span class="drug-cat">抗凝药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">分层研究建议·待药师审核 · 已有分层研究资料</div>
+<div class="info"><b>作用机制</b><p>利托那韦对不同华法林异构体的影响复杂，抗凝效应可能改变。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>不应直接按固定比例调整；由医生结合INR趋势调整。</p></div>
+<div class="info"><b>监测</b><p>开始及结束先诺欣后加密INR监测，关注出血和血栓。</p></div>
+<div class="stages"><h3>分阶段处理建议（研究用途，尚未审方）</h3>
+<div class="phase"><b>服用先诺欣前</b><p>获取基线INR、目标范围、最近剂量、出血/血栓风险。</p></div>
+<div class="phase"><b>先诺欣治疗期间</b><p>更密切监测INR；按INR变化由抗凝管理团队决定增减剂量。</p></div>
+<div class="phase"><b>停用先诺欣后</b><p>结束用药后继续复查INR，因为酶抑制/诱导的时间进程不同。</p></div>
+</div>
+<div class="caution"><b>证据局限：</b>先诺欣厂家直接建议密切监测抗凝指标。</div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·心血管 ↗</a>
+</div>
+<div class="actions"><a href="#med-warfarin" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-carbamazepine" data-search="卡马西平 Carbamazepine 精神神经" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">卡马西平</span><span class="drug-cat">精神神经</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>强效CYP3A诱导，可能减少先诺欣暴露并影响抗病毒效果。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>官方禁忌联用；近期使用史同样重要，不能通过临时停药即认为可安全合用。</p></div>
+<div class="info"><b>监测</b><p>既往用药时间线、癫痫控制情况。</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-carbamazepine" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-dihydroergotamine" data-search="双氢麦角胺 偏头痛药" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">双氢麦角胺</span><span class="drug-cat">偏头痛药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>暴露升高可能导致严重血管痉挛和缺血。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>缺血症状</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-dihydroergotamine" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-piroxicam" data-search="吡罗昔康 镇痛药" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">吡罗昔康</span><span class="drug-cat">镇痛药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>说明书列为合并用药禁忌，可能增加不良反应。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>消化道出血、肾功能</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-piroxicam" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-midazolam_oral" data-search="咪达唑仑（口服） 咪达唑仑 Midazolam 精神神经" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">咪达唑仑（口服）</span><span class="drug-cat">精神神经</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>先诺欣可明显增加口服咪达唑仑暴露，增加过度镇静和呼吸抑制风险。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>口服制剂禁忌联用；注射等非口服给药路径不能简单套用，应参照重症监护条件及单独方案评估。</p></div>
+<div class="info"><b>监测</b><p>意识、呼吸、生命体征。</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw4.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·神经精神 ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw1.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物相互作用总览 ↗</a>
+</div>
+<div class="actions"><a href="#med-midazolam_oral" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-midazolam_parenteral" data-search="咪达唑仑（非口服） 咪达唑仑 Midazolam 镇静药" >
+<summary><span class="pill avoid">避免或不建议合用</span><span class="drug-name">咪达唑仑（非口服）</span><span class="drug-cat">镇静药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">分层研究建议·待药师审核 · 已有分层研究资料</div>
+<div class="info"><b>作用机制</b><p>CYP3A抑制可延长镇静并增加呼吸抑制风险。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>本条存在剂型、适应证、剂量或患者状态的限制条件；按场景复核原始说明书，专科评估后处理。未经审核的程序不提供具体减量或停药方案。</p></div>
+<div class="info"><b>监测</b><p>生命体征、呼吸、镇静程度</p></div>
+<div class="stages"><h3>分阶段处理建议（研究用途，尚未审方）</h3>
+<div class="phase"><b>服用先诺欣前</b><p>确认给药途径、目的和抢救条件；口服禁忌。</p></div>
+<div class="phase"><b>先诺欣治疗期间</b><p>利托那韦可能显著增强镇静作用。若必需联合，专科考虑减少咪达唑仑剂量/频次并实施呼吸监测。</p></div>
+<div class="phase"><b>停用先诺欣后</b><p>注意镇静作用延迟消退。</p></div>
+</div>
+<div class="caution"><b>证据局限：</b>本品说明书提出非口服合用需ICU/类似场所监护。</div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw9.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·其他 ↗</a>
+</div>
+<div class="actions"><a href="#med-midazolam_parenteral" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-pethidine" data-search="哌替啶 镇痛药" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">哌替啶</span><span class="drug-cat">镇痛药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>去甲哌替啶等暴露改变，可能增加严重不良反应。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>中枢神经毒性、呼吸</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-pethidine" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-quetiapine" data-search="喹硫平 Quetiapine 精神神经" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">喹硫平</span><span class="drug-cat">精神神经</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>经CYP3A代谢，浓度上升可能导致严重镇静甚至昏迷。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>官方禁忌联用；精神专科协同制定替代方案，避免突然停药产生病情波动。</p></div>
+<div class="info"><b>监测</b><p>精神状态、意识、过度镇静。</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-quetiapine" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-rifampin_st_johns" data-search="圣约翰草（贯叶连翘） St. John&#x27;s wort 贯叶连翘 中草药" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">圣约翰草（贯叶连翘）</span><span class="drug-cat">中草药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>强效CYP3A诱导可能降低抗病毒药浓度，导致疗效下降。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>近期草药/保健品使用史</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-rifampin_st_johns" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-dexamethasone" data-search="地塞米松 Dexamethasone 糖皮质激素" >
+<summary><span class="pill manage">需要监测/调整</span><span class="drug-name">地塞米松</span><span class="drug-cat">糖皮质激素</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>利托那韦可能抑制地塞米松代谢，使其暴露增加。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>评估是否有必要继续联用；由医生根据适应证和临床反应调整。</p></div>
+<div class="info"><b>监测</b><p>血糖、血压、感染征象和激素相关不良反应。</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw7.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·激素等 ↗</a>
+</div>
+<div class="actions"><a href="#med-dexamethasone" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-diazepam" data-search="地西泮 精神神经" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">地西泮</span><span class="drug-cat">精神神经</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>暴露增加可导致过度镇静和呼吸抑制。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>意识、呼吸</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-diazepam" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-digoxin" data-search="地高辛 Digoxin 强心药" >
+<summary><span class="pill tdm">高风险 · 需TDM</span><span class="drug-name">地高辛</span><span class="drug-cat">强心药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">分层研究建议·待药师审核 · 已有分层研究资料</div>
+<div class="info"><b>作用机制</b><p>利托那韦影响P-gp介导的转运，可能增加地高辛暴露。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>本条存在剂型、适应证、剂量或患者状态的限制条件；按场景复核原始说明书，专科评估后处理。未经审核的程序不提供具体减量或停药方案。</p></div>
+<div class="info"><b>监测</b><p>地高辛TDM、肾功能、血钾、心电图/中毒表现</p></div>
+<div class="stages"><h3>分阶段处理建议（研究用途，尚未审方）</h3>
+<div class="phase"><b>服用先诺欣前</b><p>核对最近稳态地高辛浓度、给药至采血时间（≥6–8小时更可靠）、心率、心电图、K⁺/Mg²⁺及CrCl；高龄、低体重和肾损伤需重点审查。</p></div>
+<div class="phase"><b>先诺欣治疗期间</b><p>利托那韦P-gp抑制可能升高地高辛浓度；优先安排TDM和心电/电解质监护。根据结果由医生减量、延长间隔或短期停药。</p></div>
+<div class="phase"><b>停用先诺欣后</b><p>根据浓度、肾功能和心率再调整；老年CKD患者清除更慢，不能以停先诺欣即恢复原给药。</p></div>
+</div>
+<div class="caution"><b>证据局限：</b>本品厂家有不同利托那韦剂量/给药途径下的相互作用研究，不允许将AUC增幅直接换算药物剂量。</div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·心血管 ↗</a>
+<a href="https://www.jacc.org/doi/10.1016/j.jacc.2022.08.800" target="_blank" rel="noopener noreferrer">JACC 2022: 心血管药与奈玛特韦/利托那韦 ↗</a>
+</div>
+<div class="actions"><a href="#med-digoxin" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-tmp_smx" data-search="复方磺胺甲噁唑 复方新诺明 磺胺甲噁唑/甲氧苄啶 TMP-SMX 抗感染药" >
+<summary><span class="pill lower">相对较少</span><span class="drug-name">复方磺胺甲噁唑</span><span class="drug-cat">抗感染药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>厂家利托那韦药物相互作用资料未提示需按此相互作用常规调整剂量。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>仅针对该配伍，不代表无需按肾功能、感染适应证等调整剂量。</p></div>
+<div class="info"><b>监测</b><p>肾功能、血钾、血常规及药物过敏风险。</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw6.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·抗感染 ↗</a>
+</div>
+<div class="actions"><a href="#med-tmp_smx" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-fusidic_acid" data-search="夫西地酸 抗感染药" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">夫西地酸</span><span class="drug-cat">抗感染药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>利托那韦和夫西地酸可能相互增加血药浓度。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>肝功能及肌肉相关不良反应</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-fusidic_acid" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-neratinib" data-search="奈拉替尼 Neratinib 抗肿瘤药" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">奈拉替尼</span><span class="drug-cat">抗肿瘤药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>CYP3A抑制使抗肿瘤药暴露增加，潜在严重肝毒性。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>肝功能及药物毒性</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-neratinib" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-quinidine" data-search="奎尼丁 抗心律失常药" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">奎尼丁</span><span class="drug-cat">抗心律失常药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>抗心律失常药暴露增加，存在心律失常风险。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>心电图</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-quinidine" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-nisoldipine" data-search="尼索地平 钙通道拮抗剂" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">尼索地平</span><span class="drug-cat">钙通道拮抗剂</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>利托那韦可大幅增加血浆暴露，可能造成严重低血压。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>血压</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-nisoldipine" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-budesonide" data-search="布地奈德（吸入/鼻用） Budesonide 糖皮质激素" >
+<summary><span class="pill avoid">避免或不建议合用</span><span class="drug-name">布地奈德（吸入/鼻用）</span><span class="drug-cat">糖皮质激素</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>利托那韦可能增加系统性糖皮质激素作用。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>本条存在剂型、适应证、剂量或患者状态的限制条件；按场景复核原始说明书，专科评估后处理。未经审核的程序不提供具体减量或停药方案。</p></div>
+<div class="info"><b>监测</b><p>库欣表现、肾上腺功能、血糖</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw7.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·激素等 ↗</a>
+</div>
+<div class="actions"><a href="#med-budesonide" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-encainide" data-search="恩卡尼 抗心律失常药" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">恩卡尼</span><span class="drug-cat">抗心律失常药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>说明书禁忌联用，存在严重心律失常风险。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>心电图</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-encainide" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-lacidipine" data-search="拉西地平 钙通道拮抗剂" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">拉西地平</span><span class="drug-cat">钙通道拮抗剂</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>利托那韦可大幅增加血浆暴露，可能造成严重低血压。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>血压</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-lacidipine" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-pravastatin" data-search="普伐他汀 Pravastatin 调脂药" >
+<summary><span class="pill lower">相对较少</span><span class="drug-name">普伐他汀</span><span class="drug-cat">调脂药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>不依赖CYP3A作为主要清除途径；厂家资料预计与利托那韦相互作用相对少。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>若必须进行调脂治疗，可由医生评估作为替代品；“相对低”并非已证实无风险。</p></div>
+<div class="info"><b>监测</b><p>常规肌肉症状监测及核查其他药物。</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw9.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·其他 ↗</a>
+</div>
+<div class="actions"><a href="#med-pravastatin" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-propafenone" data-search="普罗帕酮 Propafenone 心血管" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">普罗帕酮</span><span class="drug-cat">心血管</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>可能升高抗心律失常药暴露，引发严重心律异常。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>官方禁忌联用；由医生选择替代方案。</p></div>
+<div class="info"><b>监测</b><p>心电图及原心律失常控制方案。</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-propafenone" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-triamcinolone" data-search="曲安奈德（注射等） Triamcinolone 糖皮质激素" >
+<summary><span class="pill avoid">避免或不建议合用</span><span class="drug-name">曲安奈德（注射等）</span><span class="drug-cat">糖皮质激素</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>强CYP3A抑制可增加系统皮质类固醇暴露、导致肾上腺抑制。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>本条存在剂型、适应证、剂量或患者状态的限制条件；按场景复核原始说明书，专科评估后处理。未经审核的程序不提供具体减量或停药方案。</p></div>
+<div class="info"><b>监测</b><p>全身激素反应、血糖、感染</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw7.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·激素等 ↗</a>
+</div>
+<div class="actions"><a href="#med-triamcinolone" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-fluvastatin" data-search="氟伐他汀 Fluvastatin 调脂药" >
+<summary><span class="pill lower">相对较少</span><span class="drug-name">氟伐他汀</span><span class="drug-cat">调脂药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>代谢不主要依赖CYP3A，厂家资料预计相互作用较少。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>临床评估后可作为选择之一；仍须核查完整处方。</p></div>
+<div class="info"><b>监测</b><p>常规不良反应与肝功能。</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw9.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·其他 ↗</a>
+</div>
+<div class="actions"><a href="#med-fluvastatin" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-flecainide" data-search="氟卡尼 抗心律失常药" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">氟卡尼</span><span class="drug-cat">抗心律失常药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>抗心律失常药浓度升高，可能导致严重心律失常。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>心电图、心律</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-flecainide" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-fluticasone_inhaled" data-search="氟替卡松（吸入/鼻喷） 丙酸氟替卡松 Fluticasone 糖皮质激素" >
+<summary><span class="pill avoid">避免或不建议合用</span><span class="drug-name">氟替卡松（吸入/鼻喷）</span><span class="drug-cat">糖皮质激素</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>利托那韦可使激素系统暴露增加，引起库欣综合征及肾上腺抑制。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>本条存在剂型、适应证、剂量或患者状态的限制条件；按场景复核原始说明书，专科评估后处理。未经审核的程序不提供具体减量或停药方案。</p></div>
+<div class="info"><b>监测</b><p>库欣表现、肾上腺功能相关症状</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw7.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·激素等 ↗</a>
+</div>
+<div class="actions"><a href="#med-fluticasone_inhaled" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-flurazepam" data-search="氟西泮 精神神经" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">氟西泮</span><span class="drug-cat">精神神经</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>暴露增加可导致过度镇静和呼吸抑制。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>意识、呼吸</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-flurazepam" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-clorazepate" data-search="氯拉卓酸 精神神经" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">氯拉卓酸</span><span class="drug-cat">精神神经</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>暴露增加可导致过度镇静和呼吸抑制。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>意识、呼吸</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-clorazepate" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-clozapine" data-search="氯氮平 精神神经" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">氯氮平</span><span class="drug-cat">精神神经</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>利托那韦可能提高药物暴露，增加严重血液学等不良反应。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>血常规及神经精神症状</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-clozapine" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-salmeterol" data-search="沙美特罗 Salmeterol 呼吸系统" >
+<summary><span class="pill avoid">避免或不建议合用</span><span class="drug-name">沙美特罗</span><span class="drug-cat">呼吸系统</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>利托那韦可能增加沙美特罗的系统暴露及心血管不良反应风险。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>官方药物相互作用资料不建议合用；由呼吸科评估可替代吸入治疗。</p></div>
+<div class="info"><b>监测</b><p>心悸、心率与心电图。</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw9.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·其他 ↗</a>
+</div>
+<div class="actions"><a href="#med-salmeterol" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-telitacicept" data-search="泰它西普 泰它西普 泰爱 Telitacicept 免疫调节剂" >
+<summary><span class="pill unknown">证据不足</span><span class="drug-name">泰它西普</span><span class="drug-cat">免疫调节剂</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">分层研究建议·待药师审核 · 已有分层研究资料</div>
+<div class="info"><b>作用机制</b><p>当前采录的先诺欣说明书条目未列出直接的泰它西普药代相互作用研究；不应推断绝对安全。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>不要把“未收录证据”视为允许联合。特别是在新冠活动性感染期间，应与风湿免疫科讨论生物制剂给药时机及潜在免疫抑制风险。</p></div>
+<div class="info"><b>监测</b><p>感染活动度、免疫球蛋白、血常规和合并其他免疫抑制药。</p></div>
+<div class="stages"><h3>分阶段处理建议（研究用途，尚未审方）</h3>
+<div class="phase"><b>服用先诺欣前</b><p>确认新冠感染状态、泰它西普治疗适应证与既往剂次、IgG/IgM、既往感染史及是否正用其他免疫抑制剂。</p></div>
+<div class="phase"><b>先诺欣治疗期间</b><p>若存在严重活动性感染应由风湿免疫/相关专科评估延后生物制剂，不能机械“替代”他克莫司。</p></div>
+<div class="phase"><b>停用先诺欣后</b><p>感染控制后由专科判断恢复免疫治疗。</p></div>
+</div>
+<div class="caution"><b>证据局限：</b>本品说明书未确立与泰它西普的定量药代相互作用；生物制剂免疫风险另行评估。</div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.remegen.com/uploadfile/2025/06/03/c9878990645fe347531e698c83e544b2683e65339b90d.pdf" target="_blank" rel="noopener noreferrer">泰它西普（泰爱）官方说明书2025版本 ↗</a>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+</div>
+<div class="actions"><a href="#med-telitacicept" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-prednisolone" data-search="泼尼松龙 Prednisolone 糖皮质激素" >
+<summary><span class="pill manage">需要监测/调整</span><span class="drug-name">泼尼松龙</span><span class="drug-cat">糖皮质激素</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>可能升高泼尼松龙暴露，尤其多药联用时应重视。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>应监测效应与不良反应，不建议自动计算减量。</p></div>
+<div class="info"><b>监测</b><p>血糖、血压、感染指标。</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw7.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·激素等 ↗</a>
+</div>
+<div class="actions"><a href="#med-prednisolone" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-lovastatin" data-search="洛伐他汀 Lovastatin 调脂药" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">洛伐他汀</span><span class="drug-cat">调脂药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">分层研究建议·待药师审核 · 已有分层研究资料</div>
+<div class="info"><b>作用机制</b><p>CYP3A抑制使药物暴露显著升高，增加严重肌病风险。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>官方禁忌联用；不得在治疗期间按原剂量合用。</p></div>
+<div class="info"><b>监测</b><p>肌肉症状、肌酸激酶及肾功能。</p></div>
+<div class="stages"><h3>分阶段处理建议（研究用途，尚未审方）</h3>
+<div class="phase"><b>服用先诺欣前</b><p>其他含利托那韦5日方案的停药间隔：至少提前12小时，仅间接参考。</p></div>
+<div class="phase"><b>先诺欣治疗期间</b><p>不允许与本品联合；不可单靠剂量减半规避。</p></div>
+<div class="phase"><b>停用先诺欣后</b><p>其他方案末次后至少3天、最好5天再评估恢复，标记为间接。</p></div>
+</div>
+<div class="caution"><b>证据局限：</b>禁忌为本品直接依据，时序为外推。</div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9348462/" target="_blank" rel="noopener noreferrer">Marzolini et al. Clin Pharmacol Ther 2022: ritonavir-DDI管理 ↗</a>
+</div>
+<div class="actions"><a href="#med-lovastatin" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-lomitapide" data-search="洛美他派 调脂药" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">洛美他派</span><span class="drug-cat">调脂药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>CYP3A抑制显著升高药物浓度。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>肝功能</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-lomitapide" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-terfenadine" data-search="特非那定 抗过敏药" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">特非那定</span><span class="drug-cat">抗过敏药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>血药浓度升高可能导致严重心律失常。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>心电图</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-terfenadine" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-rosuvastatin" data-search="瑞舒伐他汀 Rosuvastatin 可定 调脂药" >
+<summary><span class="pill manage">需要监测/调整</span><span class="drug-name">瑞舒伐他汀</span><span class="drug-cat">调脂药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">分层研究建议·待药师审核 · 已有分层研究资料</div>
+<div class="info"><b>作用机制</b><p>虽不主要依赖CYP3A代谢，但转运蛋白抑制仍可能升高暴露。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>如需合用，官方资料提出采用较低剂量并观察不良反应；可由医生评估其他调脂方案。</p></div>
+<div class="info"><b>监测</b><p>肌痛、肌酶及肾功能。</p></div>
+<div class="stages"><h3>分阶段处理建议（研究用途，尚未审方）</h3>
+<div class="phase"><b>服用先诺欣前</b><p>评估心血管事件风险和是否允许短期中断。</p></div>
+<div class="phase"><b>先诺欣治疗期间</b><p>尽量最低剂量并监测肌病；其他利托那韦方案的短疗程暂停建议可供参考。</p></div>
+<div class="phase"><b>停用先诺欣后</b><p>若已暂停，末次抗病毒后由医生根据风险审慎恢复，不可套用其他药物的百分比。</p></div>
+</div>
+<div class="caution"><b>证据局限：</b>本品直接资料指出暴露可能增加，重启时序仅作间接参考。</div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·心血管 ↗</a>
+<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9348462/" target="_blank" rel="noopener noreferrer">Marzolini et al. Clin Pharmacol Ther 2022: ritonavir-DDI管理 ↗</a>
+</div>
+<div class="actions"><a href="#med-rosuvastatin" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-methylergometrine" data-search="甲基麦角新碱 妇产科用药" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">甲基麦角新碱</span><span class="drug-cat">妇产科用药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>暴露升高可能导致严重血管痉挛和缺血。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>缺血症状</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-methylergometrine" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-colchicine_renal_hepatic" data-search="秋水仙碱（肝或肾功能受损） 秋水仙碱 Colchicine 抗痛风药" >
+<summary><span class="pill conditional">条件性禁忌</span><span class="drug-name">秋水仙碱（肝或肾功能受损）</span><span class="drug-cat">抗痛风药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">分层研究建议·待药师审核 · 已有分层研究资料</div>
+<div class="info"><b>作用机制</b><p>CYP3A/P-gp抑制增加秋水仙碱暴露，可出现危及生命的毒性。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>本条存在剂型、适应证、剂量或患者状态的限制条件；按场景复核原始说明书，专科评估后处理。未经审核的程序不提供具体减量或停药方案。</p></div>
+<div class="info"><b>监测</b><p>肾功能、肝功能、血常规、肌肉与胃肠毒性</p></div>
+<div class="stages"><h3>分阶段处理建议（研究用途，尚未审方）</h3>
+<div class="phase"><b>服用先诺欣前</b><p>审查实际肝肾功能与用药适应证。</p></div>
+<div class="phase"><b>先诺欣治疗期间</b><p>不能在禁忌条件下通过经验减量继续合用。</p></div>
+<div class="phase"><b>停用先诺欣后</b><p>由医生决定后续抗痛风方案。</p></div>
+</div>
+<div class="caution"><b>证据局限：</b>依据本品药物配伍提示的条件性禁忌。</div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw5.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·免疫抑制 ↗</a>
+</div>
+<div class="actions"><a href="#med-colchicine_renal_hepatic" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-venetoclax_init" data-search="维奈克拉（初始/递增期） 维奈克拉 Venetoclax 抗肿瘤药" >
+<summary><span class="pill conditional">条件性禁忌</span><span class="drug-name">维奈克拉（初始/递增期）</span><span class="drug-cat">抗肿瘤药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">分层研究建议·待药师审核 · 已有分层研究资料</div>
+<div class="info"><b>作用机制</b><p>CYP3A抑制可使暴露增加，诱发肿瘤溶解综合征。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>本条存在剂型、适应证、剂量或患者状态的限制条件；按场景复核原始说明书，专科评估后处理。未经审核的程序不提供具体减量或停药方案。</p></div>
+<div class="info"><b>监测</b><p>肿瘤溶解指标、电解质、肾功能</p></div>
+<div class="stages"><h3>分阶段处理建议（研究用途，尚未审方）</h3>
+<div class="phase"><b>服用先诺欣前</b><p>确认是否为起始/递增期和血液系统肿瘤疗程。</p></div>
+<div class="phase"><b>先诺欣治疗期间</b><p>该阶段不能以简单减量替代禁忌。</p></div>
+<div class="phase"><b>停用先诺欣后</b><p>由血液科按肿瘤溶解风险重新制定。</p></div>
+</div>
+<div class="caution"><b>证据局限：</b>本品说明书表2条件性禁忌。</div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw3.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·抗肿瘤 ↗</a>
+</div>
+<div class="actions"><a href="#med-venetoclax_init" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-venetoclax_stable" data-search="维奈克拉（稳定维持期） 维奈克拉 Venetoclax 抗肿瘤药" >
+<summary><span class="pill avoid">避免或不建议合用</span><span class="drug-name">维奈克拉（稳定维持期）</span><span class="drug-cat">抗肿瘤药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">分层研究建议·待药师审核 · 已有分层研究资料</div>
+<div class="info"><b>作用机制</b><p>CYP3A抑制使维奈克拉暴露显著升高。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>本条存在剂型、适应证、剂量或患者状态的限制条件；按场景复核原始说明书，专科评估后处理。未经审核的程序不提供具体减量或停药方案。</p></div>
+<div class="info"><b>监测</b><p>肿瘤溶解指标、电解质、肾功能</p></div>
+<div class="stages"><h3>分阶段处理建议（研究用途，尚未审方）</h3>
+<div class="phase"><b>服用先诺欣前</b><p>确认当前维持剂量、TLS风险、是否可改用其他抗病毒。</p></div>
+<div class="phase"><b>先诺欣治疗期间</b><p>需由血液科查药品说明书设计减少剂量/停药方案，不能从起始期条件直接外推。</p></div>
+<div class="phase"><b>停用先诺欣后</b><p>防止利托那韦抑酶持续，监测后逐步回调。</p></div>
+</div>
+<div class="caution"><b>证据局限：</b>明确阶段限制，未提供默认剂量。</div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw3.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·抗肿瘤 ↗</a>
+</div>
+<div class="actions"><a href="#med-venetoclax_stable" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-estazolam" data-search="艾司唑仑 舒乐安定 Estazolam 精神神经" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">艾司唑仑</span><span class="drug-cat">精神神经</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>暴露增加可导致过度镇静和呼吸抑制。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>意识、呼吸</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-estazolam" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-bepridil" data-search="苄普地尔 抗心律失常药" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">苄普地尔</span><span class="drug-cat">抗心律失常药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>说明书禁忌联用，存在严重心律失常风险。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>心电图</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-bepridil" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-phenytoin" data-search="苯妥英 Phenytoin 精神神经" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">苯妥英</span><span class="drug-cat">精神神经</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>强效CYP3A诱导，可能降低先诺欣抗病毒暴露。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>官方禁忌联用；不能自行停抗癫痫药，需选择合适替代抗病毒治疗。</p></div>
+<div class="info"><b>监测</b><p>近期用药史、癫痫控制与药物浓度。</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-phenytoin" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-sildenafil_ed" data-search="西地那非（勃起功能障碍） 西地那非 Sildenafil PDE5抑制剂" >
+<summary><span class="pill manage">需要监测/调整</span><span class="drug-name">西地那非（勃起功能障碍）</span><span class="drug-cat">PDE5抑制剂</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">分层研究建议·待药师审核 · 已有分层研究资料</div>
+<div class="info"><b>作用机制</b><p>利托那韦可增加西地那非暴露并导致低血压。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>本条存在剂型、适应证、剂量或患者状态的限制条件；按场景复核原始说明书，专科评估后处理。未经审核的程序不提供具体减量或停药方案。</p></div>
+<div class="info"><b>监测</b><p>血压、晕厥</p></div>
+<div class="stages"><h3>分阶段处理建议（研究用途，尚未审方）</h3>
+<div class="phase"><b>服用先诺欣前</b><p>先确认适应证不是肺动脉高压，检查硝酸酯类药物、低血压、年龄及合并降压药。</p></div>
+<div class="phase"><b>先诺欣治疗期间</b><p>先诺欣说明书指出与利托那韦联合时，西地那非任何48小时内不得超过25 mg；此为上限而非鼓励服用。</p></div>
+<div class="phase"><b>停用先诺欣后</b><p>末次抗病毒后残留CYP3A抑制可持续，恢复既往方案需医师核对而非立即恢复。</p></div>
+</div>
+<div class="caution"><b>证据局限：</b>上限来自本品说明书；不应用于肺动脉高压患者。</div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw9.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·其他 ↗</a>
+</div>
+<div class="actions"><a href="#med-sildenafil_ed" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-cisapride" data-search="西沙必利 消化系统" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">西沙必利</span><span class="drug-cat">消化系统</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>暴露增加可能诱发严重心律失常。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>心电图</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-cisapride" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-sirolimus" data-search="西罗莫司 Sirolimus 雷帕霉素 免疫抑制剂" >
+<summary><span class="pill tdm">高风险 · 需TDM</span><span class="drug-name">西罗莫司</span><span class="drug-cat">免疫抑制剂</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">分层研究建议·待药师审核 · 已有分层研究资料</div>
+<div class="info"><b>作用机制</b><p>mTOR抑制剂主要受CYP3A/P-gp影响，理论上暴露可能明显增加。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>本条存在剂型、适应证、剂量或患者状态的限制条件；按场景复核原始说明书，专科评估后处理。未经审核的程序不提供具体减量或停药方案。</p></div>
+<div class="info"><b>监测</b><p>西罗莫司浓度、肾功能、血常规</p></div>
+<div class="stages"><h3>分阶段处理建议（研究用途，尚未审方）</h3>
+<div class="phase"><b>服用先诺欣前</b><p>核对目标C₀、近期浓度、剂型、适应证及免疫抑制方案。</p></div>
+<div class="phase"><b>先诺欣治疗期间</b><p>可能发生显著暴露升高；由移植专家决定暂停还是减量。</p></div>
+<div class="phase"><b>停用先诺欣后</b><p>浓度指导恢复，避免单凭固定停药天数恢复常规剂量。</p></div>
+</div>
+<div class="caution"><b>证据局限：</b>仅间接利托那韦证据，本品特异临床研究不足。</div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9348462/" target="_blank" rel="noopener noreferrer">Marzolini et al. Clin Pharmacol Ther 2022: ritonavir-DDI管理 ↗</a>
+</div>
+<div class="actions"><a href="#med-sirolimus" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-benidipine" data-search="贝尼地平 钙通道拮抗剂" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">贝尼地平</span><span class="drug-cat">钙通道拮抗剂</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>利托那韦可大幅增加血浆暴露，可能造成严重低血压。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>血压</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-benidipine" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-simvastatin" data-search="辛伐他汀 Simvastatin 调脂药" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">辛伐他汀</span><span class="drug-cat">调脂药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">分层研究建议·待药师审核 · 已有分层研究资料</div>
+<div class="info"><b>作用机制</b><p>高度依赖CYP3A代谢，暴露增加会提高肌病及横纹肌溶解风险。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>官方禁忌联用；由医生评估其他抗病毒方案或临时调整调脂治疗，并明确恢复时间。</p></div>
+<div class="info"><b>监测</b><p>肌痛、肌无力、尿色及必要时肌酸激酶/肾功能。</p></div>
+<div class="stages"><h3>分阶段处理建议（研究用途，尚未审方）</h3>
+<div class="phase"><b>服用先诺欣前</b><p>其他含利托那韦方案通常建议首次抗病毒前至少12小时停辛伐他汀；仅为跨制剂的停药时间参考。</p></div>
+<div class="phase"><b>先诺欣治疗期间</b><p>本品不得与辛伐他汀同时用药；不能仅通过减半规避。</p></div>
+<div class="phase"><b>停用先诺欣后</b><p>其他方案建议末次含利托那韦药物后至少3天、最好5天再恢复；具体需结合本品说明书、风险及药师审核。</p></div>
+</div>
+<div class="caution"><b>证据局限：</b>药物禁忌属本品直接证据，停/复药天数为其他含利托那韦制剂外推。</div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9348462/" target="_blank" rel="noopener noreferrer">Marzolini et al. Clin Pharmacol Ther 2022: ritonavir-DDI管理 ↗</a>
+</div>
+<div class="actions"><a href="#med-simvastatin" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-avanafil" data-search="阿伐那非 PDE5抑制剂" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">阿伐那非</span><span class="drug-cat">PDE5抑制剂</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>暴露升高可出现严重低血压等不良反应。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>血压</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-avanafil" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-astemizole" data-search="阿司咪唑 抗过敏药" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">阿司咪唑</span><span class="drug-cat">抗过敏药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>血药浓度升高可能导致严重心律失常。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>心电图</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-astemizole" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-alfuzosin" data-search="阿呋唑嗪 Alfuzosin 泌尿系统" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">阿呋唑嗪</span><span class="drug-cat">泌尿系统</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>利托那韦抑制代谢，可能造成严重低血压。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>血压、晕厥</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-alfuzosin" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-apixaban" data-search="阿哌沙班 Apixaban 艾乐妥 抗凝药" >
+<summary><span class="pill avoid">避免或不建议合用</span><span class="drug-name">阿哌沙班</span><span class="drug-cat">抗凝药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">分层研究建议·待药师审核 · 已有分层研究资料</div>
+<div class="info"><b>作用机制</b><p>CYP3A及P-gp抑制可能增加阿哌沙班暴露与出血风险。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>仅存在其他含利托那韦方案的间接剂量策略。本品未建立可直接采纳的剂量换算，抗凝专科复核。</p></div>
+<div class="info"><b>监测</b><p>Hb、出血征象、肾功能。</p></div>
+<div class="stages"><h3>分阶段处理建议（研究用途，尚未审方）</h3>
+<div class="phase"><b>服用先诺欣前</b><p>确认AF/VTE适应证、现有剂量、年龄、体重、Scr/CrCl、近3月VTE或卒中风险。</p></div>
+<div class="phase"><b>先诺欣治疗期间</b><p>部分奈玛特韦/利托那韦方案曾针对房颤5 mg bid提出临时改为2.5 mg bid，但地区标签和原剂量2.5 mg bid时处理并不一致，严禁自动用于先诺欣。</p></div>
+<div class="phase"><b>停用先诺欣后</b><p>由抗凝团队决定恢复时间，避免利托那韦抑酶残留及过早撤除替代抗凝。</p></div>
+</div>
+<div class="caution"><b>证据局限：</b>仅间接证据，未经过先诺欣本品验证，必须由专科处方审核。</div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.covid19-druginteractions.org/interactions/20296" target="_blank" rel="noopener noreferrer">Liverpool：奈玛特韦/利托那韦—阿哌沙班 ↗</a>
+</div>
+<div class="actions"><a href="#med-apixaban" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-atorvastatin" data-search="阿托伐他汀 Atorvastatin 立普妥 调脂药" >
+<summary><span class="pill manage">需要监测/调整</span><span class="drug-name">阿托伐他汀</span><span class="drug-cat">调脂药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">分层研究建议·待药师审核 · 已有分层研究资料</div>
+<div class="info"><b>作用机制</b><p>利托那韦可能增加阿托伐他汀暴露，增加肌病风险。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>如需使用，由医生参考官方资料选择最低适当剂量或考虑短疗程中调整/替换，避免自动生成固定减量。</p></div>
+<div class="info"><b>监测</b><p>肌痛、肌酸激酶及其他相互作用药。</p></div>
+<div class="stages"><h3>分阶段处理建议（研究用途，尚未审方）</h3>
+<div class="phase"><b>服用先诺欣前</b><p>核对近期急性冠脉事件、当前剂量及肌病风险。通常可以讨论治疗期间暂时停用。</p></div>
+<div class="phase"><b>先诺欣治疗期间</b><p>利物浦针对其他含利托那韦5日方案建议阿托伐他汀暂停5天；不能停时曾提出10 mg/日等低剂量途径，需专科与本品说明书核对。</p></div>
+<div class="phase"><b>停用先诺欣后</b><p>间接证据建议末次含利托那韦药物给药后至少3天再评估恢复；高风险或其他相互作用需个体化。</p></div>
+</div>
+<div class="caution"><b>证据局限：</b>本品说明书规定“最低剂量”；停药5天+3天源于其他利托那韦方案。</div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/ywpw/pw2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物配伍·心血管 ↗</a>
+<a href="https://www.covid19-druginteractions.org/interactions/20680" target="_blank" rel="noopener noreferrer">Liverpool：奈玛特韦/利托那韦—阿托伐他汀 ↗</a>
+</div>
+<div class="actions"><a href="#med-atorvastatin" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-ranolazine" data-search="雷诺嗪 Ranolazine 心血管" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">雷诺嗪</span><span class="drug-cat">心血管</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>CYP3A相关清除受到抑制，可能升高血药浓度并增加严重不良反应。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>官方禁忌联用；由专科评估替代方案。</p></div>
+<div class="info"><b>监测</b><p>心绞痛控制及心电图风险。</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-ranolazine" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-felodipine" data-search="非洛地平 Felodipine 心血管" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">非洛地平</span><span class="drug-cat">心血管</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>可能显著升高钙通道拮抗剂浓度并诱发低血压。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>官方禁忌联用；由医生考虑替代治疗。</p></div>
+<div class="info"><b>监测</b><p>血压及低血压表现。</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-felodipine" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-lurasidone" data-search="鲁拉西酮 Lurasidone 精神神经" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">鲁拉西酮</span><span class="drug-cat">精神神经</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>利托那韦抑制代谢，使鲁拉西酮暴露升高。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>官方禁忌联用；由精神专科评估治疗调整。</p></div>
+<div class="info"><b>监测</b><p>精神症状及药物毒性。</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-lurasidone" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-ergometrine" data-search="麦角新碱 妇产科用药" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">麦角新碱</span><span class="drug-cat">妇产科用药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>暴露升高可能导致严重血管痉挛和缺血。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>缺血症状</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-ergometrine" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details><details class="drug" id="med-ergotamine" data-search="麦角胺 偏头痛药" >
+<summary><span class="pill prohibited">禁止联用</span><span class="drug-name">麦角胺</span><span class="drug-cat">偏头痛药</span><span class="chevron">⌄</span></summary>
+<div class="drug-body">
+<div class="status">仅基础相互作用记录·暂无定量调药算法 · 仅基础相互作用信息</div>
+<div class="info"><b>作用机制</b><p>暴露升高可能导致严重血管痉挛和缺血。</p></div>
+<div class="info"><b>处理方向（未审核）</b><p>先诺欣说明书表2列为禁止联用；请由临床医生评估替代抗病毒或原有治疗药物。</p></div>
+<div class="info"><b>监测</b><p>缺血症状</p></div>
+<div class="sources"><b>相关依据（请点击原文核对）</b>
+<a href="https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf" target="_blank" rel="noopener noreferrer">先诺欣说明书（先声药业官网08版，2026-08发布文件） ↗</a>
+<a href="https://3cl.simcere.com/doctor/introduce2.asp" target="_blank" rel="noopener noreferrer">先诺欣官方药物安全·表2禁忌 ↗</a>
+</div>
+<div class="actions"><a href="#med-ergotamine" class="advanced" data-clinical="true">查看本页药物资料（待审核）</a></div>
+</div>
+</details></section>
+<div class="notice">风险分级、剂量处理和文献资料尚未完成双人临床药师复核；跨利托那韦制剂外推内容不能当作先诺欣获批用法。严重相互作用应由原专科和临床药师审核，不能直接照此停药、减量或恢复给药。</div>
+<footer>研究原型 V0.9 · 搜索功能修复 · 保留V0.7数据库；新增他克莫司模块；研究/待审核</footer></main><script>
+(function(){
+"use strict";
+var input=document.getElementById('searchInput');
+var button=document.getElementById('searchButton');
+var banner=document.getElementById('runtimeStatus');
+var cards=Array.from(document.querySelectorAll('.drug'));
+var count=document.getElementById('resultCount');
+var empty=document.getElementById('empty');
+var cardsNode=document.getElementById('cards');
+var norm=function(x){return String(x||'').toLocaleLowerCase().replace(/[\s\u3000·\-_/()（）.]/g,'');};
+var idx=cards.map(function(c){return {el:c,name:norm(c.dataset.search||'')};});
+function show(q,scroll){
+ var search=norm(q);var matches=idx.filter(function(o){return !search||o.name.includes(search)});
+ idx.forEach(function(o){o.el.hidden=search&&!o.name.includes(search);if(search&&o.el.hidden)o.el.open=false;});
+ count.textContent=search?'找到 '+matches.length+' 条匹配': '共 '+idx.length+' 条待审核药物情景';
+ empty.style.display=matches.length?'none':'block';
+ if(search&&matches.length){matches[0].el.open=true;
+  if(scroll) matches[0].el.scrollIntoView({block:'start',behavior:'smooth'});
+ }
+ return matches;
+}
+input.disabled=false;button.disabled=false;
+input.placeholder='输入他克莫司、FK506、氨氯地平…';
+banner.classList.add('ok');banner.textContent='✓ 搜索功能已启动：输入药名后点击「搜索」或键盘上的「搜索/回车」，也可以输入时实时筛选。';
+button.addEventListener('click',function(){show(input.value,true);});
+input.addEventListener('input',function(){show(input.value,false);});
+input.addEventListener('keydown',function(event){if(event.key==='Enter'){event.preventDefault();show(input.value,true);input.blur();}});
+document.querySelectorAll('[data-feature]').forEach(function(a){a.addEventListener('click',function(event){
+ event.preventDefault();var id=a.getAttribute('data-feature');var card=document.getElementById('med-'+id);if(!card)return;
+ input.value=card.dataset.search.split(' ')[0];show(input.value,false);card.open=true;card.scrollIntoView({block:'start',behavior:'smooth'});
+ });});
+if(new URLSearchParams(location.search).get('q')) {input.value=new URLSearchParams(location.search).get('q');show(input.value,false);}
+})();
+</script><script>/* V0.9 research rules. Arithmetic discussion ranges are not prescribed doses. Pure function, no network. */
+(function(root){
+'use strict';
+const refs={D1:['直接证据｜先诺欣说明书08版：用法用量、禁忌、药物相互作用','https://www.simcere.com/attached/upload/file/20260803/6392136249644588896637099.pdf'],D2:['厂家配伍资料｜免疫抑制剂（并非独立临床试验）','https://3cl.simcere.com/doctor/ywpw/pw5.asp'],L1:['外推·低质量证据｜Liverpool：奈玛特韦/利托那韦5日＋他克莫司','https://www.covid19-druginteractions.org/interactions/20675'],G1:['外推·专家建议｜SFPT在线建议：免疫抑制剂行','https://sfpt-fr.org/recospaxlovid'],R1:['外推·回顾性研究｜Boland等，2024，DOI 10.3389/ti.2024.12360','https://pubmed.ncbi.nlm.nih.gov/38596505/'],P1:['原型保守规则｜规则及测试说明（不是临床指南）','README.md']};
+const norm=x=>String(x??'').normalize('NFKC').toLowerCase().replace(/[\s·\-_/()（）.]/g,'');
+const num=x=>x===null||x===undefined||String(x).trim()===''?null:Number(x);
+const time=x=>x?new Date(x).getTime():NaN;
+function evaluate(p){
+ const issues=[],actions=[],metrics=[],alerts=[]; const add=(title,text,source)=>actions.push({title,text,source});
+ const required={sex:'性别',age:'年龄',indication:'适应证/移植类型',transplant:'移植/疾病时间与近期病情',immune:'专科判断的排斥/复发风险',form:'制剂类型',brand:'制剂商品名与规格',dose:'原每次剂量',freq:'原给药频次',last:'他克莫司末次实际给药',stage:'先诺欣阶段',start:'先诺欣开始时间',end:'先诺欣结束时间',endKind:'结束时间是计划还是实际',sample:'本次采样时间',level:'本次浓度',sampling:'采样类型',reliable:'采样与给药记录是否可靠',low:'目标下限',high:'目标上限',targetBy:'目标范围制定依据/专科',priorTime:'既往采样时间',prior:'既往浓度',trendValid:'前后采样可比性',scr:'血肌酐',scrUnit:'肌酐单位',egfr:'报告eGFR',renalTime:'肾功能检测时间',aki:'AKI状态',dialysis:'透析状态',child:'肝功能/Child-Pugh',liverTime:'肝功能检测时间',alt:'ALT',ast:'AST',bili:'总胆红素',potassium:'血钾',pregnancy:'妊娠状态',symptom:'毒性症状',tdm:'及时连续TDM能力',meds:'全部合并药/草药/近期停药（无请填无）',medReview:'合并药清单是否由药师复核',adherence:'近期漏服、加服、腹泻及剂量变化'};
+ for(const [k,v] of Object.entries(required))if(p[k]===undefined||String(p[k]).trim()===''||p[k]==='unknown')issues.push('补充/确认：'+v);
+ const limits={age:[0,120],dose:[0.01,100],freq:[1,4],level:[0,300],prior:[0,300],low:[0.1,100],high:[0.1,100],scr:[0.01,5000],egfr:[0,200],alt:[0,30000],ast:[0,30000],bili:[0,3000],potassium:[0.1,15]};
+ for(const [k,[lo,hi]] of Object.entries(limits)){const n=num(p[k]);if(n!==null&&(!Number.isFinite(n)||n<lo||n>hi))issues.push('数值/单位异常：'+(required[k]||k));}
+ const now=time(p.now),start=time(p.start),end=time(p.end),last=time(p.last),sample=time(p.sample),priorTime=time(p.priorTime),renal=time(p.renalTime),liver=time(p.liverTime);
+ if(!Number.isFinite(now))issues.push('评估时间无效');
+ for(const k of ['start','end','last','sample','priorTime','renalTime','liverTime'])if(p[k]&&!Number.isFinite(time(p[k])))issues.push('日期无效：'+required[k]);
+ const hr=(a,b)=>(a-b)/3600000; const c=num(p.level),old=num(p.prior),low=num(p.low),high=num(p.high),egfr=num(p.egfr);
+ if(low!==null&&high!==null&&low>=high)issues.push('目标下限必须小于上限');
+ if(Number.isFinite(start)&&Number.isFinite(end)&&(hr(end,start)<96||hr(end,start)>120))issues.push('疗程时间不符合本原型标准5日流程窗口（96–120小时，原型检查）；提前停药/延长疗程需专科单独设计');
+ if(p.stage==='ended'&&Number.isFinite(end)&&hr(now,end)<72)issues.push('结束后不足72小时：原型保守锁定比例；达到72小时也不自动复药');
+ if(p.stage==='ended'&&sample<end)issues.push('本次浓度采于抗病毒结束前：需结束后新结果再评估复药');
+ if(num(p.alt)>500||num(p.ast)>500||num(p.bili)>50)issues.push('肝生化显著异常筛查：ALT/AST>500或胆红素>50，属原型保守拦截而非诊断阈值；需专科确认');
+ if(end<=start)issues.push('先诺欣结束时间必须晚于开始时间');
+ if(sample<=last)issues.push('本次采样必须晚于末次实际给药');
+ if(priorTime>=sample)issues.push('既往采样必须早于本次采样');
+ for(const [v,label] of [[sample,'本次采样'],[priorTime,'既往采样'],[last,'末次给药'],[renal,'肾功能检测'],[liver,'肝功能检测']])if(v>now)issues.push(label+'不能晚于评估时间');
+ if(p.stage==='planned'&&start<now)issues.push('未开始阶段与开始时间矛盾');
+ if(p.stage==='active'&&(start>now||end<now||p.endKind!=='planned'))issues.push('治疗中阶段应填写已开始及计划结束时间');
+ if(p.stage==='ended'&&(end>now||start>now||p.endKind!=='actual'))issues.push('已结束阶段必须填写过去的实际末次服药时间');
+ if(p.stage==='planned'&&p.endKind!=='planned')issues.push('未开始阶段应填写计划结束时间');
+ if(p.form==='ir'&&num(p.freq)!==2)issues.push('速释制剂与常规每日2次不符：非标准方案需人工评估');
+ if(p.form==='er'&&num(p.freq)!==1)issues.push('缓释制剂与常规每日1次不符：非标准方案需人工评估');
+ if(p.form==='other')issues.push('非标准制剂：不适用本原型外推范围');
+ if(p.reliable!=='yes')issues.push('未确认采样记录可靠，不能将结果作为可靠C0');
+ if(p.trendValid!=='yes')issues.push('浓度趋势尚未确认可比');
+ if(p.sampling==='trough'&&Number.isFinite(last)&&Number.isFinite(sample)){
+ const expected=p.form==='ir'?12:p.form==='er'?24:NaN;
+ if(Math.abs(hr(sample,last)-expected)>2)issues.push('采样与通常谷浓度间隔不符（原型±2小时筛查，非实验室标准）');
+ }
+ if(p.sampling==='random')issues.push('随机浓度：保留毒性警示，不用于目标谷浓度比较/复药比例');
+ if(p.sampling==='held')metrics.push('本次为停药后浓度，不是常规稳态谷浓度；须由专科确认与目标比较的适用性。');
+ if(hr(now,sample)>48)issues.push('本次浓度已超过48小时：原型保守锁定，需新TDM');
+ if(hr(now,renal)>48||hr(now,liver)>48)issues.push('肝肾检测超过48小时：原型保守锁定，需确认现况');
+ if(p.tdm!=='yes')issues.push('未落实及时、连续TDM及结果反馈');
+ if(p.medReview!=='yes')issues.push('完整合并药尚未经药师复核');
+ if(p.immune!=='low')issues.push('排斥/复发风险高或未明确低风险：专科单独设计方案');
+ if(p.indication==='other')issues.push('非实体器官移植适应证：外推人群不匹配');
+ const urgent=p.symptom==='yes'||p.aki==='yes'||num(p.potassium)>=6;
+ const blocked=(num(p.age)!==null&&num(p.age)<18)||(egfr!==null&&egfr<30)||p.dialysis==='yes'||p.child==='C'||p.pregnancy==='yes';
+ if(urgent)alerts.push('立即联系主管/移植专科；疑似毒性、AKI或显著高钾需紧急评估，严重症状转急诊。不要等待计划复测。');
+ if(blocked)alerts.push('触发先诺欣说明书不应使用/禁忌或超成人适应证：由医生立即复核抗病毒方案。');
+ if(p.aki==='yes')issues.push('AKI时eGFR不能可靠代表动态清除状态');
+ if(p.dialysis==='yes')issues.push('透析患者：本原型不支持复药比例推演');
+ const meds=norm(p.meds);const risks=[['氨氯地平|amlodipine|络活喜','氨氯地平：先诺欣说明书列为禁止联用'],['利福平|rifampicin|rifampin|卡马西平|carbamazepine|苯妥英|phenytoin|圣约翰草|贯叶连翘','强诱导剂：禁止联用，近期停药也不能假定诱导作用消失'],['辛伐他汀|simvastatin|洛伐他汀|lovastatin|胺碘酮|amiodarone','说明书禁忌药：必须复核替代方案'],['伏立康唑|voriconazole|伊曲康唑|itraconazole|克拉霉素|clarithromycin|地尔硫卓|diltiazem|葡萄柚|grapefruit','存在额外抑酶/相互作用线索：药师核对多药叠加影响']];
+ for(const [pattern,message] of risks)if(new RegExp(pattern).test(meds)){issues.push(message);alerts.push(message);}
+ if(meds&&meds!=='无')metrics.push('合并药文本仅作有限词表筛查；未命中不能判定安全，须完整人工审方。');
+ if(Number.isFinite(sample)&&Number.isFinite(last))metrics.push('采样距末次他克莫司给药 '+hr(sample,last).toFixed(1)+' 小时');
+ if(p.stage==='ended'&&p.endKind==='actual'&&end<=now)metrics.push('距先诺欣实际末次给药 '+hr(now,end).toFixed(1)+' 小时（不作为自动复药倒计时）');
+ if(Number.isFinite(start)&&Number.isFinite(last)&&last<=start){const gap=hr(start,last);metrics.push('他克莫司末次给药至先诺欣开始 '+gap.toFixed(1)+' 小时');if(gap<(p.form==='er'?24:12))issues.push('未达到Liverpool外推的速释12小时/缓释24小时间隔；需专科核查');}
+ if(p.stage!=='planned'&&last>start){issues.push('先诺欣开始后仍有他克莫司给药记录：需核查合用/补药经过');alerts.push('检测到可能重叠给药；不可按常规原方案继续。');}
+ const comparable=p.reliable==='yes'&&p.trendValid==='yes'&&p.sampling!=='random'&&priorTime<sample&&c!==null&&old!==null;
+ if(comparable)metrics.push('浓度变化：'+old+' → '+c+' ng/mL（'+(c>old?'升高':c<old?'下降':'持平')+'；不拟合半衰期）');
+ if(comparable&&c>old)issues.push('近期浓度升高：暂停复药比例输出，核查蓄积/采样/额外给药');
+ const above=c!==null&&high!==null&&c>high; if(above)alerts.push('本次浓度高于录入目标上限；即使不是规范谷浓度，也须核查潜在毒性。');
+ add('共同风险','先诺欣＝先诺特韦/利托那韦。可升高他克莫司暴露；需密切监测疗效和不良反应。说明书未给出本模块的复药比例。',['D1','D2']);
+ if(blocked)add('先处理抗病毒适用性','不生成联合给药方案；专科复核年龄、妊娠、重度肝肾损害与透析。不能把奈玛特韦/利托那韦的肾功能用法迁移到本品。',['D1']);
+ if(p.stage==='planned')add('开始之前','在主管专科制定方案前暂缓启动联合方案，不自行停用维持免疫抑制治疗。落实TDM或讨论替代抗病毒；Liverpool的停药后12/24小时启动条件仅是跨产品参考。',['L1']);
+ else if(p.stage==='active')add('疗程中处理','当日由专科决定暂缓/继续暂缓他克莫司；不按原常规方案直接联合。排斥风险高者不能机械连续停药，补药或替代免疫抑制须单独决策。',['L1','G1']);
+ else if(p.stage==='ended')add('疗程结束后',above?'浓度高于目标：供专科确认继续暂缓；查毒性、采样和趋势，不能到固定日期自动恢复。':'进入复药条件核对，不等于允许复药。确认有效浓度接近目标、趋势可解释、器官功能稳定、无毒性、完整审方并能持续TDM后，由专科决定。',['L1','R1']);
+ else add('先补时间轴','尚不能确定治疗阶段；不要按未确认时间推断恢复给药。',['P1']);
+ add('TDM执行计划',urgent?'现在安排他克莫司浓度、肌酐、血钾、血糖及临床评估；急症采样不必等待谷时点，记录给药与采样时刻，后续由专科安排。':'启动前获取基线；外推SFPT建议疗程中及结束后每2–3天TDM。Liverpool另建议第6–7天（开始日为第1天）及以后每2–4天复测并持续至少2周。高浓度、症状或肾功能变化时提前，间隔由专科决定。',['G1','L1','P1']);
+ if(!urgent&&Number.isFinite(start)){const a=new Date(start+5*86400000),b=new Date(start+6*86400000);metrics.push('标准5日疗程的第6–7天复测参考：'+a.toLocaleString('zh-CN')+' 至 '+b.toLocaleString('zh-CN')+'（按开始时刻推算窗口，逾期则现在联系复测）');}
+ const eligible=!issues.length&&!blocked&&!urgent&&!above&&p.stage==='ended'&&p.endKind==='actual'&&end<=now&&sample>=end&&comparable;
+ let range=null; let discussionDailyRange=null; const doseReasons=[];
+ if(eligible){range=c<low?'25%–75%':'25%–50%';add('仅供专科讨论的外推范围','Liverpool提及原基线方案的 '+range+'；如已确认原稳定等量给药方案，可在下方查看总日剂量的算术换算；不选定剂量、不安排分次。该范围并非先诺欣验证方案，需专科确认基线日方案、制剂与后续TDM后另行处方。',['L1']);}
+ else add('剂量输出已锁定','不输出具体mg剂量或患者个体复药比例。缺失项、异常项或治疗阶段不符时，只提供风险与监测提示。资料齐全也不会自动开具处方。',['P1']);
+ add('复药后的观察','继续跟踪TDM、肾功能、血钾与神经症状；重新给药后仍可能蓄积。无浓度结果不自动加量，也不按日历恢复原量。',['L1','R1']);
+
+ const planTitle=urgent?'立即就医评估，暂停自动剂量讨论':blocked?'先处理先诺欣适用性':above?'暂不进入复药剂量讨论':p.stage==='active'?'治疗期间：由专科确认暂缓方案':p.stage==='planned'?'启动前：先落实停药与监测计划':eligible?'可进入专科复药讨论，尚非复药许可':'先补充或复核资料，暂不提供复药量';
+ if(!eligible)doseReasons.push('尚未通过复药范围的安全检查：见下方警示、缺失项及治疗阶段。');
+ if(p.doseMode!=='reference')doseReasons.push('当前显示模式未选择“显示mg总日量讨论范围”。');
+ if(p.baselineConfirmed!=='yes')doseReasons.push('尚未确认：原方案各次等量、是抗病毒前稳定方案，且由专科核实。早晚不等量或非每日方案请人工核算。');
+ if(eligible&&p.doseMode==='reference'&&p.baselineConfirmed==='yes'){
+   const daily=Number((num(p.dose)*num(p.freq)).toFixed(6)), lower=0.25,upper=c<low?0.75:0.5;
+   discussionDailyRange={baseline:daily,low:Number((daily*lower).toFixed(6)),high:Number((daily*upper).toFixed(6)),unit:'mg/日',percent:range};
+ }
+ const nextSteps=urgent?['现在联系主管/移植专科；严重神经症状或少尿等由急诊评估。','立即安排浓度、肾功能、血钾等检查；急症不必等待规范谷时点。','不依据本工具继续、补服或恢复他克莫司，由现场医生决定。']:blocked?['先由医生复核先诺欣本身是否适用及替代抗病毒方案。','同时评估他克莫司暴露、排斥风险与毒性，保留必要TDM。','在冲突解除前不显示复药mg讨论范围。']:above?['当日联系专科确认是否继续暂缓，核查采样及近期实际服药。','尽快安排复查，不等待既定复药日期；出现毒性症状立即评估。','浓度接近个体目标且趋势可解释后，重新运行评估。']:eligible?['将复药条件与参考比例交由移植专科/临床药师审核；若下方显示mg范围，患者也不要据此服药。','专科确定是否复药、实际单次量、给药间隔、可用制剂及下一次采血安排。','复药后按已约定TDM结果再调整，不能到固定天数自动回原剂量。']:['先处理下方明确列出的缺失或异常，不能由一次浓度直接推算恢复量。','治疗中由专科确认暂缓方案；高排斥风险不能机械套用连续停药。','落实连续TDM及结果反馈，再评估复药条件。'];
+ return {version:'0.9.0',planTitle,nextSteps,discussionDailyRange,doseReasons,risk:urgent?'紧急评估':blocked?'先诺欣适用性拦截':above?'高浓度警示':'高风险·专科管理',issues:[...new Set(issues)],alerts,metrics,actions,range,eligible,mgDose:null};
+}
+const api={evaluate,refs,norm,num};root.TacEngine=api;if(typeof module!=='undefined')module.exports=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+
+(function(){
+'use strict';
+const $=id=>document.getElementById(id),form=$('tacForm');
+const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const local=d=>{const x=new Date(d);return new Date(x-x.getTimezoneOffset()*60000).toISOString().slice(0,16)};
+let demo=false;
+function invalidate(){ $('report').hidden=true;$('report').replaceChildren();$('stale').textContent='资料已更改，旧结果已清除；请重新生成策略。'; }
+form.addEventListener('input',invalidate);form.addEventListener('change',invalidate);
+$('now').value=local(Date.now());
+function refs(ids){return ids.map(id=>{const [name,url]=TacEngine.refs[id];return '<a href="'+url+'" target="_blank" rel="noopener noreferrer">'+id+' · '+esc(name)+'</a>';}).join('');}
+$('sourceList').innerHTML=Object.keys(TacEngine.refs).map(id=>'<li>'+refs([id])+'</li>').join('');
+$('clearForm').onclick=()=>{form.reset();demo=false;$('caseState').textContent='已清空。';$('now').value=local(Date.now());invalidate();};
+$('demo').onclick=()=>{form.reset();demo=true;const now=Date.now();const ago=h=>local(now-h*3600000);const p={sex:'男',age:48,pregnancy:'no',indication:'kidney',transplant:'虚构：肾移植3年，近期无排斥',immune:'low',form:'ir',brand:'虚构：速释胶囊，规格已核对',dose:1,freq:2,adherence:'原方案早晚各1mg；启动前暂停，未补服，无腹泻',last:ago(198),now:ago(0),stage:'ended',start:ago(186),end:ago(78),endKind:'actual',low:5,high:8,targetBy:'虚构：移植专科设定，仅演示',level:6,sample:ago(2),sampling:'held',reliable:'yes',prior:9,priorTime:ago(26),trendValid:'yes',tdm:'yes',scr:95,scrUnit:'umol',egfr:75,renalTime:ago(2),aki:'no',dialysis:'no',potassium:4.2,child:'normal',alt:22,ast:24,bili:12,liverTime:ago(2),symptom:'no',meds:'无',medReview:'yes',doseMode:'reference',baselineConfirmed:'yes'};for(const [k,v] of Object.entries(p))$(k).value=v;$('caseState').textContent='当前为虚构病例，全部结果带演示标记；勿用于真实患者。';invalidate();};
+form.onsubmit=e=>{e.preventDefault();const p=Object.fromEntries(new FormData(form));const r=TacEngine.evaluate(p);const ul=xs=>'<ul>'+xs.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>';
+const d=r.discussionDailyRange;const discussion=d?'<div class="dose-box"><div class="eyebrow">专科审核用 · 非处方 · 跨产品外推</div><h4>总日量的算术讨论范围：'+esc(d.low)+'–'+esc(d.high)+' mg/日</h4><p>原稳定总日量 '+esc(d.baseline)+' mg/日 × '+esc(d.percent)+'。</p><p><strong>这是一天总量的参考区间，不是每次剂量，也不表示今天可以服用。</strong>专科需另定复药时点、实际剂量和间隔，确认制剂可实现性；不按此区间自行分次、取整或拆胶囊。</p><div class="refs">'+refs(['L1','P1'])+'</div></div>':'<div class="block"><h4>为什么还没有mg讨论范围？</h4>'+ul(r.doseReasons)+'</div>';
+const overview='<div class="plan"><h4>'+esc(r.planTitle)+'</h4><ol>'+r.nextSteps.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ol></div>'+discussion;
+$('report').innerHTML='<h3>'+esc(r.risk)+(demo?' · 虚构演示':'')+'</h3><p>规则版本 '+r.version+' · 评估时间 '+esc(p.now)+' · 本机时区 '+esc(Intl.DateTimeFormat().resolvedOptions().timeZone)+'</p><p class="lock">研究 / 待审核 · 不可直接开具处方</p>'+r.alerts.map(a=>'<div class="alert">'+esc(a)+'</div>').join('')+overview+'<div class="block"><h4>资料与一致性检查</h4>'+(r.issues.length?ul(r.issues):'<p>资料门槛通过；仍需专科审方，不代表临床安全已验证。</p>')+'</div>'+(r.metrics.length?'<div class="block"><h4>时间与浓度核对</h4>'+ul(r.metrics)+'</div>':'')+r.actions.map(a=>'<div class="block"><h4>'+esc(a.title)+'</h4><p>'+esc(a.text)+'</p><div class="refs">'+refs(a.source)+'</div></div>').join('')+'<details><summary>本次输入快照（仅本机；不含身份标识）</summary>'+ul(Object.entries(p).map(([k,v])=>{const el=$(k);return (el.closest('label')?.firstChild.textContent||k)+'：'+(el.tagName==='SELECT'?el.selectedOptions[0].textContent:v)}))+'</details><div class="toolbar"><button type="button" id="printReport">打印 / 保存为PDF</button></div>';
+$('report').hidden=false;$('stale').textContent='已生成；修改任一输入会立即清除旧结果。';$('printReport').onclick=()=>window.print();$('report').scrollIntoView({behavior:'smooth',block:'start'});};
+})();
+</script></body></html>
